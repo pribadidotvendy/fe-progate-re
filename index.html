@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NINJA KEN</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            NINJA KEN
+        </div>
+        <div class="header-right">
+            <ul>
+                <li>Tentang Saya</li>
+                <li>Proyek Contoh</li>
+                <li>Hubungi Saya</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="top-wrapper">
+            <h1>NINJA KEN<span>.</span></h1>
+            <p>MY PORTOFOLIO</p>
+            <img src="assets/images/Ninja Ken.png">
+        </div>
+        <div class="about-wrapper">
+            <h2>Tentang Saya</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit rem quae eius at sequi? Nam sed iste excepturi sapiente illum magni amet dolore minus expedita dicta nostrum, deserunt sunt accusamus?</p>
+        </div>
+        <div class="project-wrapper">
+            <h2>Proyek Contoh</h2>
+            <div class="image-wrapper">
+                <div class="example">
+                    <a href="#" id="example2">
+                        <img src="assets/images/1.png">
+                        <p>Image 1</p>
+                    </a>
+                </div>
+                <div class="example">
+                    <img src="assets/images/2.png">
+                    <p>Image 2</p>
+                </div>
+                <div class="example">
+                    <img src="assets/images/3.png">
+                    <p>Image 3</p>
+                </div>
+                <div class="example">
+                    <img src="assets/images/3.png">
+                    <p>Image 4</p>
+                </div>
+
+                <a class="prev" onclick="updateSlide(-1)">&#10094;</a>
+                <a class="next" onclick="updateSlide(1)">&#10095;</a>
+
+                
+            </div>
+        </div>
+        <div class="contact-wrapper">
+            <h2>Hubungi Saya</h2>
+            <input type="email" placeholder="Email (Diperlukan)">
+            <textarea placeholder="Message (Diperlukan)"></textarea>
+            <button>Kirim</button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-left">
+            NINJA KEN
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li>Tentang Saya</li>
+                <li>Proyek Contoh</li>
+                <li>Hubungi Saya</li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        let slideIndex = 0;
+
+        const updateSlide = (n) => {
+            slideIndex += n;
+            showSlide(slideIndex);
+        }
+
+        const showSlide = (n) => {
+            const slides = document.getElementsByClassName("example");
+            if(n > slides.length - 1) {
+                slideIndex = 0;
+            }
+            if( n < 0 ) {
+                slideIndex = slides.length -1 ;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "block";
+            }
+            slides [slideIndex].style.display = "none";
+        }
+
+        showSlide(slideIndex);
+
+        
+        });
+    </script>
+</body>
+</html>
